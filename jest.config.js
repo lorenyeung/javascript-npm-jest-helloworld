@@ -1,24 +1,21 @@
 // jest.config.js
-module.exports = {
-    verbose: true,
-    preset: "jest-puppeteer",
-    // this is needed by the unit tests for some reason.
-    testURL: "http://localhost:8000/",
-    
-    "setupFiles": [
-      "./jest/globals.js"
-    ], 
-
-   // where to put the code coverage reports.
-   "coverageDirectory": "./tests/coverage",
-
-   "coveragePathIgnorePatterns": [
-      "./jest",
-    ],
-
-    // A path to a module which exports an async function that is triggered once before all test suites
-    "globalSetup": "./jest/globalSetup.js",
-  
-    // A path to a module which exports an async function that is triggered once after all test suites
-    "globalTeardown": "./jest/globalTeardown.js",
+export default {
+  moduleNameMapper: {
+    '\\.html$': '<rootDir>/tests/__mocks__/htmlMock.js'
+  },
+  preset: 'jest-puppeteer',
+  testEnvironment: 'jest-environment-puppeteer',
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest'},
+  reporters: [
+    'default',
+    ['jest-junit', {
+      outputDirectory: 'reports/junit',
+      outputName: 'results.xml',
+      addFileAttribute: 'true',
+      ancestorSeparator: ' › ',
+      uniqueOutputName: 'false'
+    }]
+  ],
+  coverageReporters: ['json', 'lcov', 'cobertura']
 };

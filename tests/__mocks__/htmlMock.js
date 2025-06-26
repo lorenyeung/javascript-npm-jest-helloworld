@@ -1,0 +1,1 @@
+export default '<!doctype html><html><head>  <title>Test page</title></head><body>  <h1>Test page</h1>  <div>Put things in the following container:</div>  <div id="container"></div>  <script>    function test_function() {      return "hi there!";    };  </script>  <script src="bundle.js"></script></body></html>';

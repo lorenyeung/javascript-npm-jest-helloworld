@@ -11,7 +11,7 @@ global.jQuery = function(argument) {
 */
 
 // var index = require('../dist/index');
-import hello_jest_is_loaded from "../dist/index";
+import hello_jest_is_loaded from "../dist/index.html";
 
 describe('testing my_plugin', () => {
 
