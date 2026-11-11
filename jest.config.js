@@ -4,8 +4,6 @@ export default {
     '\\.html$': '<rootDir>/tests/__mocks__/htmlMock.js'
   },
   preset: 'jest-puppeteer',
-  globalSetup: '<rootDir>/jest/globalSetup.js',
-  globalTeardown: '<rootDir>/jest/globalTeardown.js',
   setupFiles: ['<rootDir>/jest/globals.js'],
   testEnvironment: 'jest-environment-puppeteer',
   transform: {
